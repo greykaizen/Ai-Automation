@@ -29,7 +29,7 @@ function Analytics() {
     const [selectedView, setSelectedView] = useState("month");
 
     return (
-        <div className="p-6 space-y-8 bg-gray-50 min-h-screen px-6 sm:px-12 md:px-40">
+        <div className="p-6 space-y-8 bg-gray-50 min-h-screen sm:px-8 md:px-16 lg:px-32 ps-20">
             {/* Filter Buttons */}
             <div className="flex flex-wrap justify-between items-center gap-4">
                 <div className="flex rounded-full bg-gray-200 p-1">
@@ -81,7 +81,7 @@ function Analytics() {
             {/* Cards Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {box.map((item, index) => (
-                    <div key={index} className="border border-gray-200 rounded-lg px-4 py-8 flex items-center gap-3 bg-white">
+                    <div key={index} className="border border-gray-200 rounded-lg px-4 py-6 flex items-center gap-3 bg-white">
                         <div className={`p-3 rounded-full ${item.bg}`}>{item.icon}</div>
                         <div>
                             <div className="text-2xl font-bold">{item.amount}</div>
@@ -93,9 +93,9 @@ function Analytics() {
 
             {/* Chart Section */}
             <div className="p-6 rounded-lg">
-            <div className="h-[400px] w-full">
-                    <ResponsiveContainer width="95%" height="100%">
-                        <BarChart data={data} margin={{ top: 20, right: 20, left: 20, bottom: 5 }}>
+                <div className="h-[300px] md:h-[400px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={data} margin={{ top: 20, right: 20, left: 0, bottom: 5 }}>
                             <CartesianGrid stroke="#E5E7EB" strokeDasharray="0" />
                             <XAxis dataKey="name" stroke="#4A5568" tick={{ fontSize: 12 }} />
                             <YAxis stroke="#4A5568" tick={{ fontSize: 12 }} />
