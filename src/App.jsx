@@ -8,15 +8,21 @@ import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromE
 import Layout from './Layout.jsx/Layout'
 import Calendar from './routes/calender'
 import Analytics from './routes/Analytics'
+import Login from './routes/login'
+import Signup from './routes/signup'
+
 
 function App() {
   const router = createBrowserRouter(
-    createRoutesFromElements(
+    createRoutesFromElements(<>
+      <Route path='/login' element={ <Login/> } />
+        <Route path='/signup' element={ <Signup/> } />
       <Route path='/' element={ <Layout />}>
         <Route index element={ <DashboardPage />} />
         <Route path='/calender' element={ <Calendar /> } />
         <Route path='/analytics' element={ <Analytics /> } />
       </Route>
+        </>
     )
   )
 

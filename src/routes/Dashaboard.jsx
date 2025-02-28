@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import { Mail, ChevronRight, BarChart3, Ratio } from "lucide-react"
 import MetricCard from "../components/MetricCard"
 import LiveFeed from "../components/LiveFeed"
@@ -8,6 +8,7 @@ import TopPeople from "../components/ToPeople"
 
 
 export default function DashboardPage() {
+   const [selectedView, setSelectedView] = useState("month");
   return (
     <div className='ps-18 bg-[rgb(255,255,255)]'>
     <div className="min-h-screen bg-background">
@@ -42,9 +43,22 @@ export default function DashboardPage() {
           <div className="p-6 border-none rounded-lg shadow-md bg-white transition-all duration-300 hover:shadow-[0_4px_10px_rgba(45,212,191,0.4)]">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-semibold">Stats</h3>
-              <div className="flex gap-2">
-                <button className="rounded-full bg-accent px-3 py-1 text-sm cursor-pointer">Weekly</button>
-                <button className="rounded-full px-3 py-1 text-sm text-muted-foreground cursor-pointer">Monthly</button>
+              <div className="flex gap-2"> <button
+                        className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                            selectedView === "month" ? "bg-gray-500 text-white" : "bg-gray-200 text-gray-400"
+                        }`}
+                        onClick={() => setSelectedView("month")}
+                    >
+                        Month view
+                    </button>
+                    <button
+                        className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                            selectedView === "week" ? "bg-gray-500 text-white" : "bg-gray-200 text-gray-400"
+                        }`}
+                        onClick={() => setSelectedView("week")}
+                    >
+                        Week view
+                    </button>
               </div>
             </div>
             <StatsChart />
