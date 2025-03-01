@@ -14,14 +14,14 @@ const LeadCard = ({ name }) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`rounded-xl shadow-md transition-all ${hover ? "bg-gray-400 text-white" : "bg-white"}`}
+      className={`rounded-xl transition-all ${hover ? "bg-gray-400 text-white" : "bg-white"}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <div className="flex items-center gap-3 px-4 py-3">
         <img src={Boy} alt="Profile" className="w-10 h-10 rounded-full" />
         <div>
-          <p className="font-semibold">{name}</p>
+          <p className="">{name}</p>
           <p className={`text-sm ${hover ? "text-white" : "text-gray-500"}`}>CEO @ Meta Inc.</p>
         </div>
       </div>
@@ -33,20 +33,24 @@ const LeadCard = ({ name }) => {
 
 export default function Pipelines() {
   return (
-    <div className="pl-[130px] pt-[30px] bg-gray-100 min-h-screen overflow-x-auto flex-grow">
-      <h1 className="text-3xl font-bold">Lead’s Pipeline</h1>
-      <p className="text-gray-500 mb-6">Monitor the current stage of each lead in the sales process.</p>
-      <div className="grid grid-cols-6 gap-4 w-max">
-        {pipelineStages.map((stage) => (
-          <div key={stage.name}>
-            <div className={`p-3 rounded-lg text-center font-semibold ${stage.color} w-56 h-10`}>{stage.name}</div>
-            <div className="space-y-3 mt-3">
-              {stage.leads.map((lead) => (
-                <LeadCard key={lead} name={lead} />
-              ))}
+    <div className="pl-[130px] pt-[30px] bg-gray-100 min-h-screen overflow-x-auto flex justify-center">
+      <div className="w-full max-w-[1600px]">
+        <h1 className="text-3xl font-bold">Lead’s Pipeline</h1>
+        <p className="text-gray-500 mb-6">Monitor the current stage of each lead in the sales process.</p>
+        <div className="grid grid-cols-6 gap-4 w-max justify-items-center">
+          {pipelineStages.map((stage) => (
+            <div key={stage.name} className="flex justify-center">
+              <div className="w-full max-w-[256px]">
+                <div className={`p-3 rounded-lg text-center ${stage.color} w-56 h-10 flex items-center justify-center`}>{stage.name}</div>
+                <div className="space-y-3 mt-3">
+                  {stage.leads.map((lead) => (
+                    <LeadCard key={lead} name={lead} />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
