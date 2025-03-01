@@ -11,7 +11,7 @@ const Inbox = () => {
   const [selectedEmail, setSelectedEmail] = useState(null);
 
   return (
-    <div className="flex min-h-screen bg-gray-200 text-gray-400 pl-[120px]">
+    <div className="flex min-h-screen bg-gray-200 text-gray-400 pl-[120px] pt-[40px] pr-[120px]">
       {/* Sidebar */}
       <div className="w-[40%] p-6 border-r border-gray-300 bg-white rounded-2xl mr-6">
         <div className="mb-4 flex space-x-4">
@@ -48,53 +48,50 @@ const Inbox = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col bg-white rounded-2xl p-6">
-        <div className="flex justify-between mb-4">
+      {/* Main Content Container */}
+      <div className="flex-1">
+        {/* Buttons Container */}
+        <div className="flex justify-between items-center mb-4">
           <div className="flex space-x-2">
             <button className="p-2 bg-gray-100 rounded">Archive</button>
             <button className="p-2 bg-gray-100 rounded">Snooze</button>
-            <button className="p-2 bg-gray-100 rounded">Delete</button>
+            <button className="p-2 bg-gray-100 roundedc">Delete</button>
           </div>
           <button className="p-2 bg-gray-100 rounded">About Lead</button>
         </div>
-        {selectedEmail ? (
-          <div className="w-full">
-            <h2 className="text-xl font-bold mb-2">{selectedEmail.subject}</h2>
-            <div className="flex items-center mb-4">
-              <div className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${selectedEmail.bgColor}`}>{selectedEmail.initials}</div>
-              <div className="ml-3">
-                <p className="font-bold">{selectedEmail.name}</p>
-                <p className="text-sm text-gray-500">To: support@quickpipe.com</p>
+        {/* Email Content */}
+        <div className="flex-1 flex flex-col bg-white rounded-2xl p-6">
+          {selectedEmail ? (
+            <div className="w-full">
+              <h2 className="text-xl font-bold mb-2">{selectedEmail.subject}</h2>
+              <div className="flex items-center mb-4">
+                <div className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${selectedEmail.bgColor}`}>{selectedEmail.initials}</div>
+                <div className="ml-3">
+                  <p className="font-bold">{selectedEmail.name}</p>
+                  <p className="text-sm text-gray-500">To: support@quickpipe.com</p>
+                </div>
+                <span className="ml-auto text-sm text-gray-500">{selectedEmail.time}</span>
               </div>
-              <span className="ml-auto text-sm text-gray-500">{selectedEmail.time}</span>
+              <div className="rounded-xl">
+                <p className="text-gray-700">Hi Support Team,</p>
+                <p className="text-gray-700 mt-2">My name is Alex Carter, and I work as a Sales Representative at Greenfield Solutions. We’re currently exploring tools to help us scale our team operations effectively, particularly in areas like client follow-ups, reporting, and team collaboration.</p>
+                <p className="text-gray-700 mt-2">Would it be possible to set up a meeting to discuss this further? I’m generally available on weekdays after 1 PM and can adjust if needed. Looking forward to your insights!</p>
+                <p className="text-gray-700 mt-4">Best regards,</p>
+                <p className="text-gray-700">Alex Carter</p>
+              </div>
+              <div className="flex justify-end mt-4">
+                <button className="p-3 pr-10 pl-10 bg-green-500 text-white rounded-xl">Reply</button>
+              </div>
             </div>
-            <div className="bg-gray-100 p-4 rounded-xl">
-              <p className="text-gray-700">Hi Support Team,</p>
-              <p className="text-gray-700 mt-2">My name is Alex Carter, and I work as a Sales Representative at Greenfield Solutions. We’re currently exploring tools to help us scale our team operations effectively, particularly in areas like client follow-ups, reporting, and team collaboration.</p>
-              <p className="text-gray-700 mt-2">Would it be possible to set up a meeting to discuss this further? I’m generally available on weekdays after 1 PM and can adjust if needed. Looking forward to your insights!</p>
-              <p className="text-gray-700 mt-4">Best regards,</p>
-              <p className="text-gray-700">Alex Carter</p>
+          ) : (
+            <div className="text-center">
+              <p>Click to view</p>
+              <div className="w-16 h-16 mx-auto bg-blue-100 p-4 rounded-full">
+                <div className="w-12 h-12 bg-blue-500 rounded-full"></div>
+              </div>
             </div>
-            <div className="flex justify-end mt-4">
-              <button className="p-3 bg-green-500 text-white rounded-lg">Reply</button>
-            </div>
-          </div>
-        ) : (
-          <div className="text-center">
-            <p>Click to view</p>
-            <div className="w-16 h-16 mx-auto bg-blue-100 p-4 rounded-full">
-              <div className="w-12 h-12 bg-blue-500 rounded-full"></div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Floating Action Button */}
-      <div className="absolute bottom-4 right-4">
-        <button className="p-4 bg-green-500 text-white rounded-full flex items-center">
-          <FaPlus />
-        </button>
+          )}
+        </div>
       </div>
     </div>
   );
