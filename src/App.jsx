@@ -7,7 +7,7 @@ import Layout from './Layout.jsx/Layout'
 import Calendar from './routes/calender'
 import Analytics from './routes/Analytics'
 import Login from './routes/Login'
-import Signup from './routes/signup'
+import Signup from './routes/Signup'
 
 
 function App() {
