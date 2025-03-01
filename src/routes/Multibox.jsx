@@ -9,16 +9,24 @@ const emails = [
 
 const Inbox = () => {
   const [selectedEmail, setSelectedEmail] = useState(null);
+  const [selectedTab, setSelectedTab] = useState("All Inboxes");
 
   return (
     <div className="flex min-h-screen bg-gray-200 text-gray-400 pl-[120px] pt-[40px] pr-[120px]">
       {/* Sidebar */}
       <div className="w-[40%] p-6 border-r border-gray-300 bg-white rounded-2xl mr-6">
-        <div className="mb-4 flex space-x-4">
-          <span className="text-green-500 border-b-2 border-green-500">All Inboxes</span>
-          <span className="text-green-500 border-b-2 border-green-500">Emails</span>
-          <span className="text-green-500 border-b-2 border-green-500">SMS</span>
+      <div className="mb-4 flex space-x-4">
+          {['All Inboxes', 'Emails', 'SMS'].map((tab) => (
+            <span
+              key={tab}
+              onClick={() => setSelectedTab(tab)}
+              className={`cursor-pointer ${selectedTab === tab ? "text-green-500 border-b-2 border-green-500" : "text-gray-500"}`}
+            >
+              {tab}
+            </span>
+          ))}
         </div>
+        <div className="mb-4 text-2xl text-gray-400">Primary</div>
         <div className="mb-4">
           <input
             type="text"
