@@ -14,6 +14,7 @@ import WebsiteVisitor from './routes/WebsiteVisitor';
 import MultiBox from './routes/Multibox';
 import EmailAccounts from './routes/EmailAccounts';
 import AILeadScouts from './routes/AILeadScouts';
+import AiLeadScouts from './routes/AILeadScouts';
 
 function App() {
   const router = createBrowserRouter(
