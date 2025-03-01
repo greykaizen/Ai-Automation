@@ -31,7 +31,7 @@ const Inbox = () => {
             <div
               key={email.id}
               onClick={() => setSelectedEmail(email)}
-              className={`p-4 border-b border-gray-200 flex items-center justify-between cursor-pointer rounded-lg transition-colors ${selectedEmail?.id === email.id ? "bg-[#58b593] text-white" : "hover:bg-[#f5fffb]"} ${email.unread ? "font-bold" : "font-normal"}`}
+              className={`p-4 border-b border-gray-200 flex items-center justify-between cursor-pointer rounded-lg transition-colors ${selectedEmail?.id === email.id ? "bg-[#15A395] text-white" : "hover:bg-[#f5fffb]"} ${email.unread ? "font-bold" : "font-normal"}`}
             >
               <div className="flex items-center space-x-3">
                 <div className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${email.bgColor}`}> 
@@ -52,18 +52,20 @@ const Inbox = () => {
       <div className="flex-1">
         {/* Buttons Container */}
         <div className="flex justify-between items-center mb-4">
-          <div className="flex space-x-2">
-            <button className="p-2 bg-gray-100 rounded">Archive</button>
-            <button className="p-2 bg-gray-100 rounded">Snooze</button>
-            <button className="p-2 bg-gray-100 roundedc">Delete</button>
+          <div className="bg-white p-1 rounded-xl flex space-x-2">
+            <button className="p-2 rounded ml-[25px] mr-[25px]">Archive</button>
+            <button className="p-2 rounded ml-[25px] mr-[25px]">Snooze</button>
+            <button className="p-2 rounded ml-[25px] mr-[25px]">Delete</button>
           </div>
-          <button className="p-2 bg-gray-100 rounded">About Lead</button>
+          <button className="p-3 bg-white rounded-xl">About Lead</button>
         </div>
         {/* Email Content */}
+        <div className="flex-1 flex flex-col bg-white rounded-2xl p-3 mb-[10px]">
+          {selectedEmail && <h2 className="text-xl-center font-bold rounded">{selectedEmail.subject}</h2>}
+        </div>
         <div className="flex-1 flex flex-col bg-white rounded-2xl p-6">
           {selectedEmail ? (
             <div className="w-full">
-              <h2 className="text-xl font-bold mb-2">{selectedEmail.subject}</h2>
               <div className="flex items-center mb-4">
                 <div className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${selectedEmail.bgColor}`}>{selectedEmail.initials}</div>
                 <div className="ml-3">
@@ -80,7 +82,7 @@ const Inbox = () => {
                 <p className="text-gray-700">Alex Carter</p>
               </div>
               <div className="flex justify-end mt-4">
-                <button className="p-3 pr-10 pl-10 bg-green-500 text-white rounded-xl">Reply</button>
+                <button className="p-3 pr-10 pl-10 bg-[#15A395] text-white rounded-xl">Reply</button>
               </div>
             </div>
           ) : (
