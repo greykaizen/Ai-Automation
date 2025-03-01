@@ -4,7 +4,7 @@ import {
   Building2, Plus, X, Briefcase 
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; 
-import { v4 as uuidv4 } from 'uuid'; // Generate unique workspace ID
+import { v4 as uuidv4 } from 'uuid';
 
 const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);

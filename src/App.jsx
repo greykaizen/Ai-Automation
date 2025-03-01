@@ -1,14 +1,12 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Sidebar from './components/Sidebar'
 import DashboardPage from './routes/Dashaboard'
-import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import Layout from './Layout.jsx/Layout'
 import Calendar from './routes/calender'
 import Analytics from './routes/Analytics'
-import Login from './routes/login'
+import Login from './routes/Login'
 import Signup from './routes/signup'
 
 
