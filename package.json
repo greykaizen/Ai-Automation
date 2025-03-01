@@ -1,7 +1,7 @@
 {
   "name": "ai-automation-project",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +17,6 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0",
     "recharts": "^2.15.1",
-    "tailwindcss": "^4.0.7",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
@@ -30,6 +29,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "tailwindcss": "^4.0.9",
     "vite": "^6.1.0"
   }
 }
