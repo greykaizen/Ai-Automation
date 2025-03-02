@@ -1,90 +1,64 @@
-// Sidebar.js
-import React from 'react';
-import {
-  FaBriefcase, FaMapMarkerAlt, FaIndustry, FaUsers, FaDollarSign,
-  FaGlobe, FaCogs, FaMoneyCheckAlt, FaUser, FaBuilding
-} from 'react-icons/fa';
+import React from "react";
+import { FaSearch, FaPhone, FaCommentDots, FaBriefcase, FaMapMarkerAlt, FaIndustry, FaUsers, FaDollarSign, FaGlobe, FaCogs, FaMoneyCheckAlt, FaUser, FaBuilding } from "react-icons/fa";
+import backgroundImage from "../assets/AILead_Scouts.jpeg";
 
-const Sidebar = () => {
+export default function LeadSearch() {
   return (
-    <div className="w-[300px] bg-white border border-gray-200 rounded-2xl h-screen flex flex-col ml-[87px]">
-      {/* Sidebar Header */}
-      <div className="p-4 border-b border-gray-200">
-        <h2 className="text-xl font-bold mb-[40px]">Search Manually</h2>
-        <div className="flex items-center justify-between">
-          <FaMapMarkerAlt />
-          <span className="text-xl text-gray-500">Skip already owned</span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer" />
-            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-          </label>
+    <div className="flex min-h-screen">
+      {/* Sidebar */}
+      <div className="w-[300px] bg-white border border-gray-200 rounded-2xl h-screen flex flex-col ml-[75px]">
+        <div className="p-4 border-b border-gray-200">
+          <h2 className="text-xl font-bold mb-[40px]">Search Manually</h2>
+          <div className="flex items-center justify-between">
+            <FaMapMarkerAlt />
+            <span className="text-lg text-gray-500">Skip already owned</span>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" className="sr-only peer" />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            </label>
+          </div>
         </div>
+        <nav className="flex-1 p-2 space-y-4">
+          {[{ icon: FaBriefcase, label: "Job titles" }, { icon: FaMapMarkerAlt, label: "Location" }, { icon: FaIndustry, label: "Industry & Keywords" }, { icon: FaUsers, label: "Employees" }, { icon: FaDollarSign, label: "Revenue" }, { icon: FaGlobe, label: "Lookalike domain" }, { icon: FaCogs, label: "Technologies" }, { icon: FaMoneyCheckAlt, label: "Funding type" }, { icon: FaUser, label: "Name" }, { icon: FaBuilding, label: "Company" }].map((item, index) => (
+            <div key={index} className="w-full p-2 rounded text-lg text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+              <item.icon />
+              <span className='pl-[15px]'>{item.label}</span>
+            </div>
+          ))}
+        </nav>
       </div>
 
-      {/* Sidebar Menu Items */}
-      <nav className="flex-1 p-2 space-y-4">
-        {/* Job Titles */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaBriefcase />
-          <span className='pl-[15px]'>Job titles</span>
+      {/* Main Content */}
+      <div
+        className="flex justify-center flex-1 bg-black relative bg-cover bg-center rounded-2xl mx-4"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <div className="bg-opacity-60 rounded-2xl shadow-lg w-[750px] text-center">
+          <h2 className="text-white text-3xl mb-[75px] pb-[30pxc] mt-[210px]">
+            Discover high-value leads with ease
+          </h2>
+          <div className="flex flex-wrap justify-center gap-2 mb-6 w-[650px] pl-[85px]">
+            {["Sales persons", "Marketing Directors from Sweden", "Chief Executive Officers from Switzerland", "IT managers", "Small business owners in Los Angeles"].map((item, index) => (
+              <button key={index} className="px-4 py-3 text-sm bg-gray-500/30 text-white rounded-full shadow  my-[10px] mx-[6px]">
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden justify-self-center w-[650px]">
+            <span className="text-gray-500 ml-3">
+              <FaSearch />
+            </span>
+            <input
+              type="text"
+              placeholder="E.g Engineers in New York in software ..."
+              className="flex-1 px-3 py-2 text-gray-800 focus:outline-none"
+            />
+            <button className="bg-green-500 px-6 py-2 text-white font-semibold rounded-r-full">
+              AI Search
+            </button>
+          </div>
         </div>
-
-        {/* Location */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaMapMarkerAlt />
-          <span className='pl-[15px]'>Location</span>
-        </div>
-
-        {/* Industry & Keywords */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaIndustry />
-          <span className='pl-[15px]'>Industry & Keywords</span>
-        </div>
-
-        {/* Employees */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaUsers />
-          <span className='pl-[15px]'>Employees</span>
-        </div>
-
-        {/* Revenue */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaDollarSign />
-          <span className='pl-[15px]'>Revenue</span>
-        </div>
-
-        {/* Lookalike domain */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaGlobe />
-          <span className='pl-[15px]'>Lookalike domain</span>
-        </div>
-
-        {/* Technologies */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaCogs />
-          <span className='pl-[15px]'>Technologies</span>
-        </div>
-
-        {/* Funding type */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaMoneyCheckAlt />
-          <span className='pl-[15px]'>Funding type</span>
-        </div>
-
-        {/* Name */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaUser />
-          <span className='pl-[15px]'>Name</span>
-        </div>
-
-        {/* Company */}
-        <div className="w-full p-2 rounded text-xl text-gray-400 hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
-          <FaBuilding />
-          <span className='pl-[15px]'>Company</span>
-        </div>
-      </nav>
+      </div>
     </div>
   );
-};
-
-export default Sidebar;
+}
