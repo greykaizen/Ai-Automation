@@ -30,35 +30,36 @@ export default function LeadSearch() {
 
       {/* Main Content */}
       <div
-        className="flex justify-center flex-1 bg-black relative bg-cover bg-center rounded-2xl mx-4"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="bg-opacity-60 rounded-2xl shadow-lg w-[750px] text-center">
-          <h2 className="text-white text-3xl mb-[75px] pb-[30pxc] mt-[210px]">
-            Discover high-value leads with ease
-          </h2>
-          <div className="flex flex-wrap justify-center gap-2 mb-6 w-[650px] pl-[85px]">
-            {["Sales persons", "Marketing Directors from Sweden", "Chief Executive Officers from Switzerland", "IT managers", "Small business owners in Los Angeles"].map((item, index) => (
-              <button key={index} className="px-4 py-3 text-sm bg-gray-500/30 text-white rounded-full shadow  my-[10px] mx-[6px]">
-                {item}
-              </button>
-            ))}
-          </div>
-          <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden justify-self-center w-[650px]">
-            <span className="text-gray-500 ml-3">
-              <FaSearch />
-            </span>
-            <input
-              type="text"
-              placeholder="E.g Engineers in New York in software ..."
-              className="flex-1 px-3 py-2 text-gray-800 focus:outline-none"
-            />
-            <button className="bg-green-500 px-6 py-2 text-white font-semibold rounded-r-full">
-              AI Search
-            </button>
-          </div>
-        </div>
-      </div>
+  className="flex justify-center items-center flex-1 bg-black relative bg-cover bg-center rounded-2xl mx-4"
+  style={{ backgroundImage: `url(${backgroundImage})` }}
+>
+  <div className="bg-opacity-60 rounded-2xl shadow-lg w-[750px] text-center">
+    <h2 className="text-white text-3xl mb-[75px] pb-[30px] mt-[0px]">
+      Discover high-value leads with ease
+    </h2>
+    <div className="flex flex-wrap justify-center gap-2 mb-6 w-[650px] mx-auto">
+      {["Sales persons", "Marketing Directors from Sweden", "Chief Executive Officers from Switzerland", "IT managers", "Small business owners in Los Angeles"].map((item, index) => (
+        <button key={index} className="px-4 py-3 text-sm bg-gray-500/30 text-white rounded-full shadow my-[10px] mx-[6px]">
+          {item}
+        </button>
+      ))}
+    </div>
+    <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden justify-center w-[650px] mx-auto">
+      <span className="text-gray-500 ml-3">
+        <FaSearch />
+      </span>
+      <input
+        type="text"
+        placeholder="E.g Engineers in New York in software ..."
+        className="flex-1 px-3 py-2 text-gray-800 focus:outline-none"
+      />
+      <button className="bg-green-500 px-6 py-2 text-white font-semibold rounded-r-full">
+        AI Search
+      </button>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
