@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSearch, FaPhone, FaCommentDots, FaBriefcase, FaMapMarkerAlt, FaIndustry, FaUsers, FaDollarSign, FaGlobe, FaCogs, FaMoneyCheckAlt, FaUser, FaBuilding } from "react-icons/fa";
+import { FaSearch, FaPhone, FaCommentDots, FaBriefcase, FaMapMarkerAlt, FaIndustry, FaUsers, FaDollarSign, FaGlobe, FaCogs, FaMoneyCheckAlt, FaUser, FaBuilding, FaHandSparkles } from "react-icons/fa";
 import backgroundImage from "../assets/AILead_Scouts.jpeg";
 
 export default function LeadSearch() {
@@ -44,18 +44,21 @@ export default function LeadSearch() {
         </button>
       ))}
     </div>
-    <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden justify-center w-[650px] mx-auto">
-      <span className="text-gray-500 ml-3">
-        <FaSearch />
-      </span>
+     <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden justify-center w-full max-w-xl mx-auto border border-gray-200">
+      <div className="text-gray-500 ml-4">
+        <FaSearch size={20} />
+      </div>
       <input
         type="text"
         placeholder="E.g Engineers in New York in software ..."
-        className="flex-1 px-3 py-2 text-gray-800 focus:outline-none"
+        className="flex-1 px-3 py-3 text-gray-700 focus:outline-none text-sm"
       />
-      <button className="bg-green-500 px-6 py-2 text-white font-semibold rounded-r-full">
-        AI Search
-      </button>
+      <div className="mr-2">
+        <button className="bg-gradient-to-r from-amber-500 to-emerald-600 px-6 py-2 text-white font-semibold rounded-full flex items-center space-x-2">
+          <FaHandSparkles size={16} className="mr-1" />
+          <span>AI Search</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
