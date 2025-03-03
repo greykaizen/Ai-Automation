@@ -102,7 +102,7 @@ const EmailAccounts = () => {
         {/* First Card */}
         <div className="border border-gray-200 rounded-2xl p-4 flex flex-col">
           <div className="flex justify-center mb-4">
-            <img src="/src/assets/customer-support.jpg" alt="Email setup" className="w-70 h-40 object-contain" />
+            <img src="/src/assets/customer-support.jpeg" alt="Email setup" className="w-70 h-40 object-contain" />
           </div>
           <h3 className="text-lg font-semibold text-center mb-4">Ready-to-send accounts</h3>
           <button className="bg-[#15A395] text-white py-2 px-4 rounded-full w-full mb-6">
@@ -146,7 +146,7 @@ const EmailAccounts = () => {
         {/* Second Card */}
         <div className="border border-gray-200 rounded-lg p-6 flex flex-col">
           <div className="flex justify-center mb-4">
-            <img src="/src/assets/send-message.jpg" alt="Hassle-free setup" className="w-70 h-40 object-contain" />
+            <img src="/src/assets/send-message.jpeg" alt="Hassle-free setup" className="w-70 h-40 object-contain" />
           </div>
           <h3 className="text-lg font-semibold text-center mb-4">Hassle-free email setup</h3>
 
@@ -194,7 +194,7 @@ const EmailAccounts = () => {
         {/* Third Card */}
         <div className="border border-gray-200 rounded-lg p-6 flex flex-col">
           <div className="flex justify-center mb-4">
-            <img src="/src/assets/businessman-sends-marketing-mails (1).jpg" alt="Ready accounts" className="w-70 h-40 object-contain" />
+            <img src="/src/assets/businessman-sends-marketing-mails (1).jpeg" alt="Ready accounts" className="w-70 h-40 object-contain" />
           </div>
           <h3 className="text-lg font-semibold text-center mb-4">Ready-to-send accounts</h3>
 
